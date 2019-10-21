@@ -15,11 +15,20 @@ public class View {
     private Controller controller;
     private Image imageback;
     private Image hash;
+    private Button[] buttons = new Button[9];
 
     public View(Controller controller) {
         this.controller = controller;
         imageback = new Image( "file/Background.jpg" );
         hash = new Image( "file/Hash.png" );
+    }
+
+    public void setButtonValue(int buttonNumber, String text) {
+        buttons[buttonNumber].setText(text);
+    }
+
+    public void setButtonValue(int buttonNumber, String text) {
+        buttons[buttonNumber].setText(text);
     }
 
     public Scene getScene() {
@@ -46,8 +55,8 @@ public class View {
         cross.setOnAction( event -> controller.setUserSymvol("x") );
 
         TilePane boardGame = new TilePane(  );
-        boardGame.setMaxWidth(250);
-        boardGame.setMaxHeight(250);
+        boardGame.setMaxWidth(200);
+        boardGame.setMaxHeight(200);
         boardGame.setPrefRows(3);
         boardGame.setPrefColumns(3);
         boardGame.setBackground(hashBcg);
@@ -56,11 +65,13 @@ public class View {
 
         for (int i = 0; i < 9; i++) {
             Button button = new Button( "     " );
+            buttons[i] = button;
+            button.setUserData(i);
             button.setOnAction( new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
                     try {
-                        controller.buttonClicked(button);
+                        controller.buttonClicked(button, buttons);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
