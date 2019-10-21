@@ -18,8 +18,10 @@ public class Controller {
         model.setO(buttonNumberO);
     }
 
+    public void setUserSymbol(Button button) {
+//        if (Button circle = new Button( "O" );
+//        circle.setOnAction( event -> controller.setUserSymbol("o") );)
 
-    public void setUserSymbol(String userSymbol) {
-        this.userSymbol = userSymbol;
+        Dla uproszczenia chciałabym aby użytkownik był tulko O i miał do kliknięcia Button O, tylko nie wiem jak to zrobić :/
+
     }
-}

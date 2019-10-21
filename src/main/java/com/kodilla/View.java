@@ -7,10 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import java.awt.event.ActionListener;
 
-import java.util.Stack;
-
-public class View {
+public class View implements ActionListener {
 
     private Controller controller;
     private Image imageback;
@@ -23,9 +22,6 @@ public class View {
         hash = new Image( "file/Hash.png" );
     }
 
-    public void setButtonValue(int buttonNumber, String text) {
-        buttons[buttonNumber].setText(text);
-    }
 
     public void setButtonValue(int buttonNumber, String text) {
         buttons[buttonNumber].setText(text);
@@ -50,9 +46,9 @@ public class View {
 //        stack.getChildren().add(img);
 
         Button circle = new Button( "O" );
-        circle.setOnAction( event -> controller.setUserSymvol("o") );
+        circle.setOnAction( event -> controller.setUserSymbol("o") );
         Button cross = new Button( "X" );
-        cross.setOnAction( event -> controller.setUserSymvol("x") );
+        cross.setOnAction( event -> controller.setUserSymbol("x") );
 
         TilePane boardGame = new TilePane(  );
         boardGame.setMaxWidth(200);
@@ -67,7 +63,8 @@ public class View {
             Button button = new Button( "     " );
             buttons[i] = button;
             button.setUserData(i);
-            button.setOnAction( new EventHandler<ActionEvent>() {
+            button.setOnAction(new EventHandler<ActionEvent>()
+            {
                 @Override
                 public void handle(ActionEvent event) {
                     try {
@@ -86,4 +83,5 @@ public class View {
         stack.getChildren().add(boardGame);
         return new Scene( mainPanel, 1500, 900, Color.WHITE );
     }
+
 }
