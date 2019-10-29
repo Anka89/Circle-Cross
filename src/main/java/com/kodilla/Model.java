@@ -1,13 +1,12 @@
 package com.kodilla;
 
-import org.junit.Assert;
-
 import java.util.Random;
 
 public class Model {
     private static final int EMPTY = 0;
     private static final int X_VALUE = 1;
     private static final int O_VALUE = -1;
+    private static boolean computer = true;
 
     private int[][] table = new int[3][3];
 
@@ -18,16 +17,17 @@ public class Model {
             }
         }
     }
+    public int[][] getTable() {
+        return table;
+    }
 
     public void setX(int buttonNumber) {
         this.table[buttonNumber / 3][buttonNumber % 3] = X_VALUE;
     }
 
-    public void setO(int buttonNumber) {
-        this.table[buttonNumber / 3][buttonNumber % 3] = O_VALUE;
-    }
 
-    public void getComputerMoveO() throws GameEndException {
+    public void getComputerMoveO() {
+        isEndOfGame();
         //end to win
         for (int i=0; i<3; i++) {
             if (table[i][0] == -1 && table[i][1] == -1 && table[i][2] == 0) {
@@ -131,7 +131,6 @@ public class Model {
             table[0][2] = -1;
             return;
         }
-
         //if cannot win or cannot block user then random move
         boolean done = false;
         Random r = new Random();
@@ -139,24 +138,55 @@ public class Model {
         while (!done) {
             a = r.nextInt(3);
             b = r.nextInt(3);
-            if (table[a][b] == ' ') {
+            if (table[a][b] == 0) {
                 table[a][b] = -1;
                 done = true;
             }
         }
     }
 
+    public void getComputerMoveLowLevel() {
+        isEndOfGame();
+        boolean done = false;
+        Random r = new Random();
+        int a, b;
+        while (!done) {
+            a = r.nextInt( 3 );
+            b = r.nextInt( 3 );
+            if (table[a][b] == 0) {
+                table[a][b] = -1;
 
-    {
-        //given
-        Model model = new Model();
-        model.setX(0, 0);
-        model.setX(0, 1);
-        //when
-        Position computerPosition = model.getComputerMoveO();
-        //then
-        Assert.assertEquals(0, computerPosition.getX());
-        Assert.assertEquals(2, computerPosition.getY());
+            }
+        }
     }
+
+    public boolean isEndOfGame(){
+        getTable();
+            if ((table[0][0] == table[1][0] && table[1][0] == table[2][0] && table[2][0] != ' ') ||
+                (table[0][1] == table[1][1] && table[1][1] == table[2][1] && table[2][1] != ' ') ||
+                (table[0][2] == table[1][2] && table[1][2] == table[2][2] && table[2][2] != ' ') ||
+                (table[0][0] == table[0][1] && table[0][1] == table[0][2] && table[0][2] != ' ') ||
+                (table[1][0] == table[1][1] && table[1][1] == table[1][2] && table[1][2] != ' ') ||
+                (table[2][0] == table[2][1] && table[2][1] == table[2][2] && table[2][2] != ' ') ||
+                (table[0][0] == table[1][1] && table[1][1] == table[2][2] && table[2][2] != ' ') ||
+                (table[0][2] == table[1][1] && table[1][1] == table[2][0] && table[2][0] != ' ')) {
+                if (computer) {
+                    System.out.println("The computer has won !!!");
+
+
+                } else {
+                    System.out.println("Bravo, you won !!!");
+                }
+                return true;
+            }
+            if (table[0][0] != ' ' && table[1][0] != ' ' && table[2][0] != ' ' &&
+                    table[0][1] != ' ' && table[1][1] != ' ' && table[2][1] != ' ' &&
+                    table[0][2] != ' ' && table[1][2] != ' ' && table[2][2] != ' ') {
+                System.out.println("DRAW!");
+                return true;
+            }
+            computer = !computer;
+            return false;
+        }
 }
 

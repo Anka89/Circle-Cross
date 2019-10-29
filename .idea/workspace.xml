@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba8282c4-5e6e-47ce-bd10-5ad47dcd13cc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/file/hard.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/file/low.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/kodilla/ModelTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/GameEndException.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/Position.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/View.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,7 +102,14 @@
       <workItem from="1571244833229" duration="4782000" />
       <workItem from="1571301807055" duration="1264000" />
       <workItem from="1571403756175" duration="2924000" />
-      <workItem from="1571644972877" duration="7931000" />
+      <workItem from="1571644972877" duration="9385000" />
+      <workItem from="1571746861619" duration="1113000" />
+      <workItem from="1571760072139" duration="2911000" />
+      <workItem from="1571833049659" duration="4261000" />
+      <workItem from="1571919091905" duration="2449000" />
+      <workItem from="1572005405054" duration="3601000" />
+      <workItem from="1572265232415" duration="3956000" />
+      <workItem from="1572342380751" duration="5109000" />
     </task>
     <servers />
   </component>

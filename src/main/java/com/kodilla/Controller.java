@@ -4,24 +4,44 @@ import javafx.scene.control.Button;
 
 public class Controller {
 
-    private String userSymbol;
     private Model model = new Model();
 
     public void buttonClicked(Button button, Button[] buttons) throws InterruptedException {
-        Thread.sleep( 5000 );
-        button.setText( userSymbol );
         Integer userData = (Integer) button.getUserData();
-        model.setX(userData);
-        int buttonNumberO = model.getComputerMoveO();
-
-        buttons[buttonNumberO].setText("O");
-        model.setO(buttonNumberO);
+        model.isEndOfGame();
+        if (model.isEndOfGame() == true) {
+            System.out.println( "End of Game" );
+            break;
+        } else {
+            model.setX( userData );
+            model.isEndOfGame();
+            if(model.isEndOfGame() == true) {
+                System.out.println( "End of Game" );
+                break;
+            } else {
+            model.getComputerMoveO();
+                if(model.isEndOfGame() == true) {
+                    System.out.println( "End of Game" );
+                    break;
+                }
+            }
+            draw( buttons, model.getTable() );
+        }
     }
 
-    public void setUserSymbol(Button button) {
-//        if (Button circle = new Button( "O" );
-//        circle.setOnAction( event -> controller.setUserSymbol("o") );)
-
-        Dla uproszczenia chciałabym aby użytkownik był tulko O i miał do kliknięcia Button O, tylko nie wiem jak to zrobić :/
-
+    private void draw(Button[] buttons, int[][] table) {
+        int k = 0;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (table[i][j] == 1) {
+                    buttons[k].setText( "x" );
+                } else if (table[i][j] == -1) {
+                    buttons[k].setText( "O" );
+                } else {
+                    buttons[k].setText( " " );
+                }
+                k++;
+            }
+        }
     }
+}
