@@ -2,7 +2,7 @@ package com.kodilla;
 
 public class ModelTestSuite {
         //given
-        Model model = new Model();
+        GameEngine model = new GameEngine();
         model.setX(0, 0);
         model.setX(0, 1);
         //when

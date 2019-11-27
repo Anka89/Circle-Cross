@@ -2,45 +2,58 @@ package com.kodilla;
 
 import javafx.scene.control.Button;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Controller {
 
-    private Model model = new Model();
+    private List<Button> buttons;
+    private GameEngine gameEngine;
+    private boolean gameNotFinished = true;
+    private boolean computerPlays = false;
 
-    public void buttonClicked(Button button, Button[] buttons) throws InterruptedException {
-        Integer userData = (Integer) button.getUserData();
-        model.isEndOfGame();
-        if (model.isEndOfGame() == true) {
-            System.out.println( "End of Game" );
-            break;
-        } else {
-            model.setX( userData );
-            model.isEndOfGame();
-            if(model.isEndOfGame() == true) {
-                System.out.println( "End of Game" );
-                break;
-            } else {
-            model.getComputerMoveO();
-                if(model.isEndOfGame() == true) {
-                    System.out.println( "End of Game" );
-                    break;
-                }
-            }
-            draw( buttons, model.getTable() );
-        }
+    public Controller() {
+        this.buttons = new ArrayList<>();
+        this.gameEngine = new GameEngine();
     }
 
-    private void draw(Button[] buttons, int[][] table) {
-        int k = 0;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (table[i][j] == 1) {
-                    buttons[k].setText( "x" );
-                } else if (table[i][j] == -1) {
-                    buttons[k].setText( "O" );
-                } else {
-                    buttons[k].setText( " " );
-                }
-                k++;
+    ;
+
+    public void addButton(Button button) {
+        buttons.add( button );
+    }
+
+    public boolean isGameNotFinished() {
+        return gameNotFinished;
+    }
+
+    public void buttonClicked(int buttonNo) throws InterruptedException {
+        gameEngine.getUserMove( buttonNo );
+        buttons.get( buttonNo ).setText( "x" );
+    }
+
+    public void lowClicked() {
+        gameEngine.setLevel( false );
+    }
+
+    public void hardClicked() {
+        gameEngine.setLevel( true );
+    }
+
+    public void playGame() {
+        if(!computerPlays) {
+            if (gameEngine.isEndOfGameForUser()) {
+                gameNotFinished = false;
+            } else {
+                computerPlays = true;
+            }
+        } else {
+            int computerClicked = gameEngine.getComputerMoveO();
+            buttons.get( computerClicked ).setText( "o" );
+            if (gameEngine.isEndOfGameForComputer()) {
+                gameNotFinished = false;
+            } else {
+                computerPlays = false;
             }
         }
     }
