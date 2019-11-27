@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba8282c4-5e6e-47ce-bd10-5ad47dcd13cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/file/hard.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/file/low.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/kodilla/ModelTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/GameEndException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/Position.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/CircleAndCross.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/View$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/View.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/View.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,6 +48,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kodilla-course" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -109,7 +114,10 @@
       <workItem from="1571919091905" duration="2449000" />
       <workItem from="1572005405054" duration="3601000" />
       <workItem from="1572265232415" duration="3956000" />
-      <workItem from="1572342380751" duration="5109000" />
+      <workItem from="1572342380751" duration="5987000" />
+      <workItem from="1572368847425" duration="1694000" />
+      <workItem from="1572428874225" duration="1063000" />
+      <workItem from="1574870252218" duration="1258000" />
     </task>
     <servers />
   </component>
