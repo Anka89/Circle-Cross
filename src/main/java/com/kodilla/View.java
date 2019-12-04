@@ -5,13 +5,16 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
+import javafx.stage.FileChooser;
+
+import java.io.File;
 
 
 public class View {
@@ -19,9 +22,6 @@ public class View {
     private Controller controller;
     private Image imageback;
     private Image hash;
-    private Label picture;
-    static String lowString = "LOW";
-    static String hardString = "HARD";
 
     public View(Controller controller) {
         this.controller = controller;
@@ -41,12 +41,17 @@ public class View {
         BorderPane mainPanel = new BorderPane();
         mainPanel.setBackground( background );
 
-        RadioButton low = new RadioButton( "LOW" );
-        RadioButton hard = new RadioButton( "HARD" );
 
-        ToggleGroup group = new ToggleGroup();
-        low.setToggleGroup( group );
-        hard.setToggleGroup( group );
+        RadioButton low = new RadioButton( "LOW" );
+        low.setStyle( "-fx-border-width: 5px; -fx-font-size: 5em; -fx-text-fill: \t#eeeeee; -fx-font-family: Impact" );
+        RadioButton hard = new RadioButton( "HARD" );
+        hard.setStyle( "-fx-border-width: 5px; -fx-font-size: 5em; -fx-text-fill: \t#eeeeee; -fx-font-family: Impact" );
+
+
+//        ToggleGroup group = new ToggleGroup();
+//        low.setToggleGroup( group );
+//        low.setSelected( true );
+//        hard.setToggleGroup( group );
 
         low.setOnAction( new EventHandler<ActionEvent>() {
             @Override
@@ -61,11 +66,50 @@ public class View {
             }
         } );
 
+        Label title = new Label("Choose the level");
+        title.setStyle( "-fx-border-width: 5px; -fx-font-size: 3em; -fx-text-fill: \t#000000; -fx-font-family: Impact" );
         VBox levelBox = new VBox();
+        levelBox.setSpacing( 35.0 );
+        levelBox.getChildren().add(title);
         levelBox.getChildren().add( low );
         levelBox.getChildren().add( hard );
+        levelBox.setAlignment( Pos.TOP_CENTER );
+        VBox.setMargin(title, new Insets( 10,0, 0, 50 ) );
+
+        Button newGame = new Button( "New Game" );
+        newGame.setStyle( "-fx-border-width: 10px; -fx-font-size: 3.5em; -fx-background-color: null; -fx-color-label-visible: no; -fx-text-fill: #ff0000; -fx-font-family: Impact" );
+
+        HBox buttonBox = new HBox();
+        buttonBox.setSpacing( 35.0 );
+        buttonBox.getChildren().add(newGame);
+        buttonBox.setAlignment( Pos.CENTER );
+
+        Button load = new Button( "Load" );
+        load.setStyle( "-fx-border-width: 10px; -fx-font-size: 3.5em; -fx-background-color: null; -fx-color-label-visible: no; -fx-text-fill: t#eeeeee; -fx-font-family: Impact" );
+//        load.setOnAction( new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//            FileChooser fileChooser = new FileChooser();
+//            File file = fileChooser.showSaveDialog(primaryStage);
+//
+//            if (file != null) {
+//                saveTextToFile(sampleText, file);
+//
+//
+        Button save = new Button( "Save" );
+        save.setStyle( "-fx-border-width: 10px; -fx-font-size: 3.5em; -fx-background-color: null; -fx-color-label-visible: no; -fx-text-fill: t#eeeeee; -fx-font-family: Impact" );
+
+        VBox loadSaveBox = new VBox(  );
+        loadSaveBox.getChildren().add( load );
+        loadSaveBox.getChildren().add( save );
+        loadSaveBox.setSpacing( 35.0 );
+        loadSaveBox.setAlignment( Pos.TOP_CENTER );
+        VBox.setMargin(load, new Insets( 5,100, 0, 50 ) );
+        VBox.setMargin(save, new Insets( 5,100, 0, 50 ) );
 
         mainPanel.setLeft( levelBox );
+        mainPanel.setBottom( buttonBox );
+        mainPanel.setRight( loadSaveBox );
 
         TilePane boardGame = new TilePane();
         boardGame.setMaxWidth( 350 );

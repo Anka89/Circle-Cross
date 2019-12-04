@@ -30,6 +30,7 @@ public class Controller {
     public void buttonClicked(int buttonNo) throws InterruptedException {
         gameEngine.getUserMove( buttonNo );
         buttons.get( buttonNo ).setText( "x" );
+        playGame();
     }
 
     public void lowClicked() {
