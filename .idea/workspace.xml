@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba8282c4-5e6e-47ce-bd10-5ad47dcd13cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/Theme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -11,8 +10,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/CircleAndCross.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/CircleAndCross.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/SaveGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/SaveGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/file/save" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/file/save" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -130,7 +133,10 @@
       <workItem from="1574941807168" duration="797000" />
       <workItem from="1575391734969" duration="1481000" />
       <workItem from="1575393300239" duration="1785000" />
-      <workItem from="1575456883436" duration="11931000" />
+      <workItem from="1575456883436" duration="13052000" />
+      <workItem from="1575540166438" duration="5834000" />
+      <workItem from="1575562660748" duration="9101000" />
+      <workItem from="1575623200446" duration="9476000" />
     </task>
     <servers />
   </component>

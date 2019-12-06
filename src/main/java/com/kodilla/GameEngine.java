@@ -3,9 +3,7 @@ package com.kodilla;
 import java.util.*;
 
 public class GameEngine {
-    private static final int EMPTY = 0;
-    private static final int X_VALUE = 1;
-    private static final int O_VALUE = -1;
+
     private static final Set<Set<Integer>> winningCombinations = new HashSet<Set<Integer>>(Arrays.asList(
             new HashSet<Integer>( Arrays.asList( 0, 1, 2 ) ),
             new HashSet<Integer>( Arrays.asList( 3, 4, 5 ) ),
@@ -16,14 +14,10 @@ public class GameEngine {
             new HashSet<Integer>( Arrays.asList( 0, 4, 8 ) ),
             new HashSet<Integer>( Arrays.asList( 2, 4, 6 ) )));
 
-    private boolean computer = true;
     private boolean isHard = false;
-
     private Set<Integer> userTable = new HashSet<>();
     private Set<Integer> computerTable = new HashSet<>();
 
-    public GameEngine() {
-    }
 
     public void getUserMove(int buttonNumber) {
         userTable.add( buttonNumber );
@@ -61,6 +55,17 @@ public class GameEngine {
         return getComputerMoveLowLevel();
     }
 
+    private boolean winningSetContainTable(Set<Integer> table) {
+        for (Set winningSet: winningCombinations) {
+            HashSet hashSet = new HashSet<>( winningSet );
+            hashSet.removeAll( table );
+            if(hashSet.isEmpty()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private boolean containsComputerFields(Set winningSet) {
         for (Integer i : computerTable) {
             if (winningSet.contains( i )) {
@@ -95,37 +100,53 @@ public class GameEngine {
     public boolean isEndOfGameForUser() {
         if (userTable.size() < 3) {
             return false;
-        } else if (fullBoard()) {
+        } else if (winningSetContainTable( userTable )) {
+            System.out.println( "You won !!! " );
             return true;
-        } else {
-            for (Set winningSet : winningCombinations) {
-                if (userTable.equals( winningSet )) {
-                    System.out.println( "You won !!! " );
-                    return true;
-                }
-            }
-            return false;
+        } else if (fullBoard()) {
+            System.out.println( "Draw" );
+            return true;
         }
+        return false;
     }
 
     public boolean isEndOfGameForComputer() {
         if (computerTable.size() < 3) {
             return false;
-        } else if (fullBoard()) {
+        } else if (winningSetContainTable( computerTable)) {
+            System.out.println( "Computer won !!! " );
             return true;
-        } else {
-            for (Set winningSet : winningCombinations) {
-                if (computerTable.equals( winningSet )) {
-                    System.out.println( "Computer won !!! " );
-                    return true;
-                }
-            }
-            return false;
+        } else if (fullBoard()) {
+            System.out.println( "Draw" );
+            return true;
         }
+        return false;
     }
 
     private boolean fullBoard() {
         return userTable.size() + computerTable.size() == 9;
     }
+
+    void clearTables() {
+        userTable.clear();
+        computerTable.clear();
+    }
+
+    public void addToUserTable(Integer integer) {
+        userTable.add(integer);
+    }
+
+    public void addToComputerTable(Integer integer) {
+        computerTable.add(integer);
+    }
+
+    public Set<Integer> getUserTable() {
+        return userTable;
+    }
+
+    public Set<Integer> getComputerTable() {
+        return computerTable;
+    }
 }
+
 

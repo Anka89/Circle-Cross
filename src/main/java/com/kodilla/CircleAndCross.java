@@ -13,7 +13,7 @@ public class CircleAndCross extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle( "Cross and Circle" );
         Controller controller = new Controller();
-        View view = new View( controller );
+        View view = new View( primaryStage, controller );
         primaryStage.setScene( view.getScene() );
         primaryStage.show();
         controller.playGame();
