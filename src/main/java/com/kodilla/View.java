@@ -1,10 +1,5 @@
 package com.kodilla;
 
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -12,16 +7,11 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
-import javafx.stage.FileChooser;
+
 import javafx.stage.Stage;
 
-import java.io.*;
-import java.util.Optional;
 
 
 public class View {
@@ -147,17 +137,6 @@ public class View {
             boardGame.getChildren().add( button );
         }
 
-        Label computerWon = new Label();
-        computerWon.textProperty().bind(controller.computerWonString);
-        Label userWon = new Label( "User won \n" + controller.userWon + " times" );
-        computerWon.textProperty().bind( Bindings.convert( controller.userWon ) );
-
-        userWon.setStyle( "-fx-text-fill: #eeeeee" );userWon.setStyle( "-fx-text-fill: #eeeeee" );
-        computerWon.setStyle( "-fx-text-fill: #eeeeee" );userWon.setStyle( "-fx-text-fill: #eeeeee" );
-
-
-        loadSaveBox.getChildren().add( computerWon );
-        loadSaveBox.getChildren().add( userWon );
         mainPanel.setCenter( boardGame );
         return new Scene( mainPanel, 1500, 900, Color.WHITE );
     }

@@ -55,7 +55,7 @@ public class GameEngine {
         return getComputerMoveLowLevel();
     }
 
-    private boolean winningSetContainTable(Set<Integer> table) {
+    boolean winningSetContainTable(Set<Integer> table) {
         for (Set winningSet: winningCombinations) {
             HashSet hashSet = new HashSet<>( winningSet );
             hashSet.removeAll( table );

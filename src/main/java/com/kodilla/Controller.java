@@ -1,7 +1,6 @@
 package com.kodilla;
 
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.StringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -19,11 +18,6 @@ public class Controller {
     private boolean gameNotFinished = true;
     private boolean computerPlays = false;
 
-
-    int computerWon = 0;
-    private String computerWonString = Integer.toString( computerWon );
-    private StringProperty cWs = ;
-    ObservableValue<Integer> userWon = new SimpleIntegerProperty( 0 ).asObject();
 
     public Controller() {
         this.buttons = new ArrayList<>();
@@ -56,7 +50,6 @@ public class Controller {
             buttons.get( computerClicked ).setText( " O " );
             if (gameEngine.isEndOfGameForComputer()) {
                 gameNotFinished = false;
-                computerWon += + 1;
                 Alert alert = new Alert( Alert.AlertType.CONFIRMATION );
                 alert.setTitle( "COMPUTER WON!!!" );
                 alert.setContentText( "Do you want to play again?" );
@@ -83,8 +76,6 @@ public class Controller {
     private void didUserWon() {
         if (gameEngine.isEndOfGameForUser()) {
             gameNotFinished = false;
-            int usrWon = userWon.getValue() + 1;
-            userWon = new SimpleIntegerProperty( usrWon ).asObject();
 
             Alert alert = new Alert( Alert.AlertType.CONFIRMATION );
             alert.setTitle( "YOU WON!!!" );
